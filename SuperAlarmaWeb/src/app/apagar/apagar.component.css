@@ -1,0 +1,29 @@
+#titulo-seccion {
+  padding: 20px;
+  text-align: center;
+  color: rgb(11, 104, 203);
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#textodesac {
+ text-align: center;
+}
+
+.mat-raised-button{
+  background-color:rgb(164, 211, 255);
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#botonesfinal {
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.icon-display {
+  transform: scale(3);
+  padding-left: 20px;
+}

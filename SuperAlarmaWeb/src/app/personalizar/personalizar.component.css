@@ -1,0 +1,73 @@
+
+#titulo-seccion {
+  padding: 20px;
+  text-align: center;
+  color: rgb(11, 104, 203);
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+#indicacion-accion {
+  padding: 5px;
+  text-align: center;
+  color: rgb(0, 145, 255);
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#alarms-column{
+  width:40%
+}
+
+#alarms-column2{
+  width:15%
+}
+#alarms-column3{
+  width:35%
+}
+
+#Sect1{
+  width:50%
+}
+
+#Sect2{
+  width:10%
+}
+
+#Sect3{
+  width:25%
+}
+
+
+
+.example-full-width {
+  width: 40%;
+}
+
+.mat-raised-button{
+  background-color:rgb(164, 211, 255);
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.methods {
+  justify-content: center;
+}
+
+#botonesfinal {
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+::ng-deep .mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background, .mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background {
+
+  border-color: blue !important;
+  background-color: blue !important;}
