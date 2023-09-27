@@ -14,13 +14,21 @@ import { NgFor } from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ApagarComponent } from './apagar/apagar.component';
+import { LandingComponent } from './landing/landing.component';
+import { LeftMenuComponent } from './left-menu/left-menu.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
+import { AlarmButtonsComponent } from './alarm-buttons/alarm-buttons.component';
 
 
 @NgModule({
   declarations: [	
     AppComponent,
       PersonalizarComponent,
-      ApagarComponent
+      ApagarComponent,
+      LandingComponent,
+      LeftMenuComponent,
+      TopMenuComponent,
+      AlarmButtonsComponent
    ],
   imports: [
     BrowserModule,

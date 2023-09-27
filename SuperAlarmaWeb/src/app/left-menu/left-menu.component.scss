@@ -1,0 +1,150 @@
+$light-blue: #5EB0EF;
+$dark-blue: #0B68CB;
+$border-color: #EEEEEE;
+$text-color: #FBFDFF;
+$accent-color: #96C7F2;
+
+.left-menu-container {
+    width: 361px;
+    height: 982px;
+    background: white;
+    border: 1px $border-color solid;
+    position: fixed;
+    .menu-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: white;
+        border: 1px $border-color solid;
+    }
+
+    .user-section {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+
+        img {
+            width: 72px;
+            height: 72px;
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+            margin-left: 8px;
+
+            .user-name {
+                color: $text-color;
+                font-size: 18px;
+            }
+
+            .user-country {
+                display: flex;
+                align-items: center;
+                color: $accent-color;
+
+                .country-icon {
+                    width: 20px;
+                    height: 20px;
+                    background: $accent-color;
+                    margin-right: 4px;
+                }
+            }
+        }
+
+        .notification-icon {
+            width: 24px;
+            height: 24px;
+            background: white;
+            margin-left: auto;
+            margin-right: 15px;
+        }
+    }
+
+    .menu-options {
+        position: absolute;
+        width: 100%;
+        top: 170px;
+
+        .option {
+            width: 100%;
+            height: 85px;
+            background: $light-blue;
+            border: 1px $border-color solid;
+            color: $text-color;
+            font-size: 20px;
+            line-height: 85px; // Vertically centers the text
+            padding-left: 40px;
+
+            &:active {
+              background-color: darken($light-blue, 5%); // or any other effect you'd like
+              // Other styles for click effect can be added here
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .signin-signup-section {
+        position: absolute;
+        width: 343px;
+        height: 56px;
+        bottom: 14px;
+        left: 9px;
+        display: flex;
+
+        .signin-button, .signup-button {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+            font-weight: 700;
+            border-radius: 8px;
+
+            &:first-child {
+                background: $accent-color;
+            }
+
+            &:last-child {
+                background: $dark-blue;
+            }
+        }
+    }
+
+    .bottom-gradient {
+        position: absolute;
+        width: 361px;
+        height: 472px;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, $accent-color 0%, rgba(183, 217, 248, 0.60) 100%);
+        border: 1px white solid;
+    }
+
+    .horizontal-lines {
+        position: absolute;
+        width: 361px;
+        height: 472px;
+        left: 0;
+        bottom: 0;
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: white;
+        }
+
+        // Repeat for other horizontal lines as necessary
+    }
+}

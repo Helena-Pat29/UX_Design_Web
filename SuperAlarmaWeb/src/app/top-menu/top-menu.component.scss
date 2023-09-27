@@ -1,0 +1,22 @@
+.top-menu {
+  display: flex; // Makes the li's display in a row
+  justify-content: space-between; // Add space between the two sets of items
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto;
+  font-size: 16px;
+
+  li {
+    display: inline-block; // Makes individual li's display inline
+    font-size: 16px;
+    font-weight: 700;
+    color: #427DD6;
+    padding: 18px; // Adjusted padding to provide even spacing on all sides
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 145, 255, 0.60);
+    &:hover {
+      background-color: rgba(0, 145, 255, 0.10);
+    }
+  }
+}

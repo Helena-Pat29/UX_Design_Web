@@ -1,0 +1,39 @@
+.alarm-buttons {
+  display: inline-flex;
+  gap: 10px;
+  position: absolute;
+  top: 461px; // Set the top starting position for the first row of buttons.
+  left: 700px; // Initial left position
+
+  button {
+    width: 230px;
+    height: 98px;
+    padding: 18px 112px;
+    position: absolute;
+    background-color: #5BA8EF;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 16px rgba(148.85, 113.09, 207.19, 0.24);
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+
+    &:nth-child(odd) {
+      left: 255px;
+    }
+
+    &:nth-child(even) {
+      left: 642px;
+    }
+
+    &:nth-child(n+3) {
+      top: 180px; // Move the third and fourth buttons downwards
+    }
+  }
+}

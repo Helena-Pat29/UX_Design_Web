@@ -1,0 +1,15 @@
+<div class="app-container">
+  <header class="app-header">
+    <div class="app-name" (click)="toggleLeftMenu()">Super Alarma</div>
+    <app-top-menu></app-top-menu>
+  </header>
+
+  <app-left-menu *ngIf="showLeftMenu"></app-left-menu>
+
+  <div class="app-body">
+    <h1>Es hora de programar <br/>tu alarma!</h1>
+    <p>Con super alarma siempre vas a estar listo para nuevas aventuras</p>
+    <hr />
+    <app-alarm-buttons></app-alarm-buttons>
+  </div>
+</div>
