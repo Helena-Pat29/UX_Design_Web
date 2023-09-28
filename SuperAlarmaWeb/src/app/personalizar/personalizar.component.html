@@ -1,7 +1,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+<div class="app-container">
+  <header class="app-header">
+    <div class="app-name" (click)="toggleLeftMenu()">Super Alarma</div>
+    <app-top-menu></app-top-menu>
+  </header>
 <Header id="titulo-seccion">Personaliza tu Alarma!</Header>
 <h1 id="indicacion-accion">Seleccione la alarma que desea personalizar </h1>
 <div class="row">
@@ -45,9 +49,10 @@
 </div>
 <div class="row" id="botonesfinal">
   <div class="column" style="width:10%">
-    <button mat-raised-button><mat-icon>save</mat-icon>Guardar</button>
+    <a mat-raised-button routerLink=""><mat-icon>save</mat-icon>Guardar</a>
   </div>
   <div class="column" style="width:10%">
-    <button mat-raised-button><mat-icon>cancel</mat-icon>Cancelar</button>
+    <a mat-raised-button routerLink=""><mat-icon>cancel</mat-icon>Cancelar</a>
   </div>
+</div>
 </div>

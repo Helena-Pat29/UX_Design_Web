@@ -1,7 +1,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+<div class="app-container">
+  <header class="app-header">
+    <div class="app-name" (click)="toggleLeftMenu()">Super Alarma</div>
+    <app-top-menu></app-top-menu>
+  </header>
 <Header id="titulo-seccion">Es hora!</Header>
 <div style="height: 150px;">
 
@@ -10,12 +14,12 @@
 <div style="height: 150px;"></div>
 <div class="row" id="botonesfinal">
   <div class="column" style="width:10%">
-    <button mat-raised-button><mat-icon>cancel</mat-icon>Desactivar</button>
+    <a mat-raised-button routerLink=""><mat-icon>cancel</mat-icon>Desactivar</a>
   </div>
   <div class="column" style="width:10%">
     <mat-icon class="icon-display">record_voice_over</mat-icon>
   </div>
 </div>
-
+</div>
 
 

@@ -1,3 +1,41 @@
+.app-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(180deg, rgba(251, 253, 255, 0) 78%, #0072DB 100%, rgba(188.53, 218.32, 245.92, 0.25) 100%);
+}
+
+app-top-menu {
+  margin-left: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 10;
+}
+
+.app-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+  position: relative;}
+
+.app-name {
+    font-family: Roboto;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 41px;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+    color: #427DD6;
+  }
+
 #titulo-seccion {
   padding: 20px;
   text-align: center;
@@ -27,3 +65,6 @@
   transform: scale(3);
   padding-left: 20px;
 }
+
+.Header
+{padding-top: 50dp;}

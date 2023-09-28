@@ -9,7 +9,12 @@ export class ApagarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit():void {
+  }
+  showLeftMenu = false;
+
+  toggleLeftMenu() {
+    this.showLeftMenu = !this.showLeftMenu;
   }
 
 }
