@@ -6,53 +6,56 @@
     <div class="app-name" (click)="toggleLeftMenu()">Super Alarma</div>
     <app-top-menu></app-top-menu>
   </header>
-<Header id="titulo-seccion">Personaliza tu Alarma!</Header>
-<h1 id="indicacion-accion">Seleccione la alarma que desea personalizar </h1>
-<div class="row">
-  <div class="column" id="alarms-column"></div>
-  <div class="column" id="alarms-column2">
-    <mat-selection-list #alarms>
-      <mat-list-option color="primary">Alarma 1 <mat-icon matListIcon>alarm</mat-icon></mat-list-option>
-      <mat-list-option color="primary">Alarma 2 <mat-icon matListIcon>alarm</mat-icon></mat-list-option>
-      <mat-list-option color="primary">Alarma 3 <mat-icon matListIcon>alarm</mat-icon></mat-list-option>
-    </mat-selection-list>
+  <app-left-menu *ngIf="showLeftMenu" [@slideInSlideOut]="showLeftMenu ? 'in' : 'out'"></app-left-menu>
+  <div class="app-body">
+    <Header id="titulo-seccion">Personaliza tu Alarma!</Header>
+    <h1 id="indicacion-accion">Seleccione la alarma que desea personalizar </h1>
+    <div class="row">
+      <div class="column" id="alarms-column"></div>
+      <div class="column" id="alarms-column2">
+        <mat-selection-list #alarms>
+          <mat-list-option color="primary">Alarma 1 <mat-icon matListIcon>alarm</mat-icon></mat-list-option>
+          <mat-list-option color="primary">Alarma 2 <mat-icon matListIcon>alarm</mat-icon></mat-list-option>
+          <mat-list-option color="primary">Alarma 3 <mat-icon matListIcon>alarm</mat-icon></mat-list-option>
+        </mat-selection-list>
 
-    <!--<p>
-      Options selected: {{alarms.selectedOptions.selected.length}}
-    </p>-->
-  </div>
-  <div class="column" id="alarms-column3"></div>
-</div>
-<div class="row">
-  <div class="column" id="Sect1">
-    <h1 id="indicacion-accion">Seleccione el tono de alarma </h1>
-    <div class="parent">
-      <mat-form-field>
-        <div style="text-align:center;">
-          <!--<mat-label>Leave a comment</mat-label>-->
-          <textarea matInput placeholder="Archivo en su carpeta de musica personal"></textarea>
+        <!--<p>
+          Options selected: {{alarms.selectedOptions.selected.length}}
+        </p>-->
+      </div>
+      <div class="column" id="alarms-column3"></div>
+    </div>
+    <div class="row">
+      <div class="column" id="Sect1">
+        <h1 id="indicacion-accion">Seleccione el tono de alarma </h1>
+        <div class="parent">
+          <mat-form-field>
+            <div style="text-align:center;">
+              <!--<mat-label>Leave a comment</mat-label>-->
+              <textarea matInput placeholder="Archivo en su carpeta de musica personal"></textarea>
+            </div>
+          </mat-form-field>
+          <button mat-raised-button><mat-icon>cloud_circle</mat-icon>Browse..</button>
         </div>
-      </mat-form-field>
-      <button mat-raised-button><mat-icon>cloud_circle</mat-icon>Browse..</button>
+      </div>
+      <div class="column" id="Sect2"></div>
+      <div class="column" id="Sect3">
+        <h1 id="indicacion-accion">Defina el metodo de apagado de alarma</h1>
+          <div class="desactivarops">
+            <mat-selection-list #methods>
+              <mat-list-option color="primary">Botón de Desactivar <mat-icon matListIcon>cancel</mat-icon></mat-list-option>
+              <mat-list-option color="primary">Indicación por comando de voz<mat-icon matListIcon>record_voice_over</mat-icon></mat-list-option>
+            </mat-selection-list>
+          </div>
+      </div>
+    </div>
+    <div class="row" id="botonesfinal">
+      <div class="column" style="width:10%">
+        <a mat-raised-button routerLink=""><mat-icon>save</mat-icon>Guardar</a>
+      </div>
+      <div class="column" style="width:10%">
+        <a mat-raised-button routerLink=""><mat-icon>cancel</mat-icon>Cancelar</a>
+      </div>
     </div>
   </div>
-  <div class="column" id="Sect2"></div>
-  <div class="column" id="Sect3">
-    <h1 id="indicacion-accion">Defina el metodo de apagado de alarma</h1>
-      <div class="desactivarops">
-        <mat-selection-list #methods>
-          <mat-list-option color="primary">Botón de Desactivar <mat-icon matListIcon>cancel</mat-icon></mat-list-option>
-          <mat-list-option color="primary">Indicación por comando de voz<mat-icon matListIcon>record_voice_over</mat-icon></mat-list-option>
-        </mat-selection-list>
-      </div>
-  </div>
-</div>
-<div class="row" id="botonesfinal">
-  <div class="column" style="width:10%">
-    <a mat-raised-button routerLink=""><mat-icon>save</mat-icon>Guardar</a>
-  </div>
-  <div class="column" style="width:10%">
-    <a mat-raised-button routerLink=""><mat-icon>cancel</mat-icon>Cancelar</a>
-  </div>
-</div>
 </div>

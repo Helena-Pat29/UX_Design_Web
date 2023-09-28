@@ -1,0 +1,107 @@
+<div class="app-container">
+  <header class="app-header">
+    <div class="app-name" (click)="toggleLeftMenu()">Super Alarma</div>
+    <app-top-menu></app-top-menu>
+  </header>
+  <app-left-menu *ngIf="showLeftMenu" [@slideInSlideOut]="showLeftMenu ? 'in' : 'out'"></app-left-menu>
+  <div class="app-body" [class.left-menu-active]="showLeftMenu">
+    <div class="left-column">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre de alarma</mat-label>
+        <input matInput placeholder="Introduce el nombre">
+      </mat-form-field>
+
+      <div class="date-selection">
+        <p>Selecciona la fecha de alarma</p>
+        <div class="date-picker">
+          <div class="select-container">
+            <label class="picker-label">Día</label>
+            <select [(ngModel)]="selectedDay">
+              <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+            </select>
+          </div>
+          <div class="select-container">
+            <label class="picker-label">Mes</label>
+            <select [(ngModel)]="selectedMonth">
+              <option *ngFor="let month of months" [value]="month.value">{{ month.name }}</option>
+            </select>
+          </div>
+          <div class="select-container">
+            <label class="picker-label">Año</label>
+            <select [(ngModel)]="selectedYear">
+              <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+            </select>
+          </div>
+        </div>
+
+        <p>Selecciona la hora de alarma</p>
+        <div class="time-selection">
+          <div class="select-container">
+            <label class="picker-label">Hora</label>
+            <select [(ngModel)]="selectedHour" (change)="onHourChange($event)">
+              <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+            </select>
+          </div>
+          :
+          <div class="select-container">
+            <label class="picker-label">Minutos</label>
+            <select [(ngModel)]="selectedMinute" (change)="onMinuteChange($event)">
+              <option *ngFor="let minute of minutes" [value]="minute">{{ minute < 10 ? '0' + minute : minute }}</option>
+            </select>
+          </div>
+          <div class="select-container">
+            <label class="picker-label">AM/PM</label>
+            <select [(ngModel)]="amPm" (change)="onAmPmChange($event)">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="right-column">
+      <p>Mis alarmas en la nube</p>
+      <mat-grid-list cols="2" rowHeight="200px">
+        <mat-grid-tile *ngFor="let alarm of cloudAlarms">
+          <mat-card>
+            <mat-card-title>{{ alarm.name }}</mat-card-title>
+            <mat-card-content>{{ alarm.date }}</mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="clearAlarm(alarm.id)">Clean</button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <p>Configuraciones adicionales</p>
+      <div class="configurations">
+
+        <!-- Toggles -->
+        <div class="toggle-section">
+          <mat-slide-toggle [(ngModel)]="repeatToggle">Repetir</mat-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="soundToggle">Sonido</mat-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="snoozeToggle">Posponer</mat-slide-toggle>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-section">
+          <button mat-raised-button color="primary" routerLink="/personalizar">Personalizar</button>
+          <button mat-raised-button color="accent" routerLink="/landing">Cancelar</button>
+          <button mat-raised-button color="primary">Crear</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="side-menu">
+      <!-- ...side-menu content... -->
+    </div>
+
+    <div class="footer-menu">
+      <!-- ...footer-menu content... -->
+    </div>
+
+    <div class="body-background">
+      <!-- ...background content... -->
+    </div>
+  </div>
+</div>

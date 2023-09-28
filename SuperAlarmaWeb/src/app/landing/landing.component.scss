@@ -1,4 +1,6 @@
 .app-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   position: relative;
@@ -6,7 +8,7 @@
 }
 
 .app-header {
-  width: 100%;
+  width: 98%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,13 +34,45 @@
     line-height: 41px;
     cursor: pointer;
     flex-grow: 1;
-    text-align: center;
+    text-align: start ;
     color: #427DD6;
   }
 }
 
 .app-body {
-  padding: 32px; // Adjust as needed
+  flex-grow: 1;
+
+  .line-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0;  // adjust the vertical space as required
+
+    .line {
+        flex-grow: 1;  // allows the line to take up as much space as possible
+        height: 1px;
+        background: rgba(33, 33, 33, 0.08);  // adjust color as needed
+        margin: 0 10px;  // space from the circle; adjust as needed
+    }
+
+    .circle {
+        width: 20px;  // adjust size as needed
+        height: 20px;
+        border-radius: 50%;  // makes it a circle
+        background-color: rgba(33, 33, 33, 0.08);  // adjust color as needed
+        z-index: 1;
+    }
+
+    app-alarm-buttons {
+      margin: 24px 0;  // gives vertical space between the divider and the buttons
+  }
+
+  p.text-info {
+      margin-top: 24px;  // vertical space after the second divider
+      font-size: 14px;  // or any desired size
+      text-align: center;  // to center the text
+  }
+}
 
   h1 {
     font-family: Roboto;

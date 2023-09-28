@@ -5,18 +5,14 @@ $text-color: #FBFDFF;
 $accent-color: #96C7F2;
 
 .left-menu-container {
+    background: $light-blue;
     width: 361px;
-    height: 982px;
-    background: white;
+    height: 850px;
     border: 1px $border-color solid;
     position: fixed;
-    .menu-background {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: white;
-        border: 1px $border-color solid;
-    }
+    top: 0;
+    bottom: 0;
+    z-index: 11;
 
     .user-section {
         position: absolute;
@@ -24,7 +20,7 @@ $accent-color: #96C7F2;
         top: 0;
         display: flex;
         align-items: center;
-        padding-left: 15px;
+        padding-left: 5px;
 
         img {
             width: 72px;
@@ -80,15 +76,41 @@ $accent-color: #96C7F2;
             padding-left: 40px;
 
             &:active {
-              background-color: darken($light-blue, 5%); // or any other effect you'd like
-              // Other styles for click effect can be added here
+              background-color: darken($light-blue, 5%);
             }
 
             &:not(:last-child) {
-                margin-bottom: 8px;
+                margin-bottom:0px;
             }
         }
     }
+
+    .gradient-section {
+      position: absolute;
+      width: 100%;
+      background: linear-gradient(180deg, #96C7F2 47.3%, rgba(183, 217, 248, 0.60) 100%);
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      top: calc(170px + (85px + 8px) * 4);  // Starting after .menu-options
+      bottom: 70px;  // 56px height of signin-signup-section + 14px bottom margin
+
+      &::before, &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: white;
+      }
+
+      &::before {
+          top: calc(33.33% - 0.5px); // Positioning 1/3 from the top, offset by half the line height
+      }
+
+      &::after {
+          top: calc(66.66% - 0.5px); // Positioning 2/3 from the top, offset by half the line height
+      }
+  }
 
     .signin-signup-section {
         position: absolute;
@@ -117,34 +139,5 @@ $accent-color: #96C7F2;
                 background: $dark-blue;
             }
         }
-    }
-
-    .bottom-gradient {
-        position: absolute;
-        width: 361px;
-        height: 472px;
-        left: 0;
-        bottom: 0;
-        background: linear-gradient(180deg, $accent-color 0%, rgba(183, 217, 248, 0.60) 100%);
-        border: 1px white solid;
-    }
-
-    .horizontal-lines {
-        position: absolute;
-        width: 361px;
-        height: 472px;
-        left: 0;
-        bottom: 0;
-
-        &::before, &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: white;
-        }
-
-        // Repeat for other horizontal lines as necessary
     }
 }

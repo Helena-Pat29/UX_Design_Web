@@ -4,12 +4,26 @@
     <app-top-menu></app-top-menu>
   </header>
 
-  <app-left-menu *ngIf="showLeftMenu"></app-left-menu>
+  <app-left-menu *ngIf="showLeftMenu" [@slideInSlideOut]="showLeftMenu ? 'in' : 'out'"></app-left-menu>
 
   <div class="app-body">
     <h1>Es hora de programar <br/>tu alarma!</h1>
     <p>Con super alarma siempre vas a estar listo para nuevas aventuras</p>
     <hr />
+    <div class="line-divider">
+      <span class="line"></span>
+      <span class="circle"></span>
+      <span class="line"></span>
+    </div>
     <app-alarm-buttons></app-alarm-buttons>
+    <div class="line-divider">
+      <span class="line"></span>
+      <span class="circle"></span>
+      <span class="line"></span>
+    </div>
+    <p class="text-info">
+        Two line text string with two actions. <br/>
+        One to two lines is preferable on mobile.
+    </p>
   </div>
 </div>

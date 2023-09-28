@@ -1,0 +1,226 @@
+$primary-title-color: #0B68CB;
+$date-picker-bg: #BADAFF;
+$card-button-color: #0072DB;
+$card-content-color: #BED6FE;
+$toggle-on-color: #1368CB;
+$toggle-off-color: #5BA8EF;
+$general-button-color: #5BA8EF;
+
+p {
+  color: $primary-title-color;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, rgba(251, 253, 255, 0) 78%, #0072DB 100%, rgba(188.53, 218.32, 245.92, 0.25) 100%);
+
+  .mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $card-content-color;
+
+    button {
+      background-color: $card-button-color;
+      color: white;  // Assuming white text on this button for visibility
+    }
+  }
+
+  .mat-card-actions {
+    justify-content: center; // Center the actions (buttons).
+  }
+
+}
+
+.app-header {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+  position: relative;
+
+  app-top-menu {
+    margin-left: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    z-index: 10;
+  }
+
+  .app-name {
+    font-family: Roboto;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 41px;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: start ;
+    color: #427DD6;
+  }
+}
+
+
+.app-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  flex-grow: 1;
+  transition: padding-left 0.3s;
+  padding-left: 15%;
+
+  .left-column {
+
+    mat-form-field {
+      width: 80%;
+
+      input {
+        max-width: 100%;  // Ensure that the input takes the full width
+      }
+    }
+    flex: 1.2;  // Increase the width of the left column
+    padding: 16px;
+  }
+
+  .right-column {
+    flex: 0.8;  // Decrease the width of the right column
+    padding: 16px;
+  }
+
+  &.left-menu-active {
+    padding-left: 380px; // Assuming your left menu is 250px wide
+  }
+
+
+  .input-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .input-field input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+  }
+
+  .input-field input:focus {
+    outline: none;
+    border-color: #007BFF;
+  }
+
+  /* Optionally, if you want the placeholder text to have a different style */
+  .input-field input::placeholder {
+    color: #888;
+  }
+
+  .date-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    p {
+      margin-bottom: 8px;
+    }
+
+    .picker-label {
+      display: block;
+      font-size: 14px;  // You can adjust as needed
+      margin-bottom: 4px;  // Adjust space between label and select
+      color: #0B68CB;  // As per your color specification
+    }
+
+    .date-picker,
+    .time-selection {
+      background-color: $date-picker-bg;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 10px;
+
+      .select-container {
+        display: flex;
+        flex-direction: column; // This stacks the label on top of the select.
+        margin-right: 15px; // Add some space between each select field.
+
+        &:last-child {
+            margin-right: 0; // Remove margin for the last select container to prevent unwanted spacing.
+        }
+
+        label {
+          color: $primary-title-color;
+          font-weight: bold;
+        }
+
+        select {
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          appearance: none; // This is to remove default OS styling
+          cursor: pointer;
+
+          &:focus {
+            border-color: #007BFF;
+          }
+        }
+      }
+    }
+  }
+
+  .configurations {
+    .toggle-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      ::ng-deep {
+        .mat-slide-toggle-thumb {
+          background-color: #5BA8EF !important;
+        }
+
+        .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+          background-color: #1368CB !important;
+        }
+
+        .mat-slide-toggle-bar {
+          background-color: lighten(#5BA8EF, 30%) !important; // Adjust if needed
+        }
+
+        .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+          background-color: lighten(#1368CB, 30%) !important; // Adjust if needed
+        }
+      }
+    }
+
+    .button-section {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        background-color: $general-button-color;
+        margin-right: 15px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+}
+

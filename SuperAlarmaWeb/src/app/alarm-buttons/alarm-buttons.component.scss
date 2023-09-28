@@ -1,15 +1,14 @@
 .alarm-buttons {
-  display: inline-flex;
-  gap: 10px;
-  position: absolute;
-  top: 461px; // Set the top starting position for the first row of buttons.
-  left: 700px; // Initial left position
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  width: max-content;
+  margin: 50px auto;
 
   button {
     width: 230px;
     height: 98px;
     padding: 18px 112px;
-    position: absolute;
     background-color: #5BA8EF;
     border: none;
     border-radius: 8px;

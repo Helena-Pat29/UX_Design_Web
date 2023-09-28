@@ -1,5 +1,4 @@
 <div class="left-menu-container">
-  <div class="menu-background"></div>
   <div class="user-section">
       <img src="https://via.placeholder.com/72x72" alt="User Image">
       <div class="user-details">
@@ -17,10 +16,13 @@
       <div class="option">Politica de privacidad</div>
       <div class="option">Salir</div>
   </div>
+  <div class="gradient-section"></div>
   <div class="signin-signup-section">
-      <div class="signin-button">Signin</div>
-      <div class="signup-button">Signup</div>
+    <div class="signin-button"
+         [style.background-color]="activeButton === 'signin' ? darkBlue : accentColor"
+         (click)="setActiveButton('signin')">Signin</div>
+    <div class="signup-button"
+         [style.background-color]="activeButton === 'signup' ? darkBlue : accentColor"
+         (click)="setActiveButton('signup')">Signup</div>
   </div>
-  <div class="bottom-gradient"></div>
-  <div class="horizontal-lines"></div>
 </div>
